@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rental Property Calculator — Cash Flow, Cap Rate, DSCR & IRR | RentScope</title>
+<meta name="description" content="Free rental property calculator. Instantly estimate monthly cash flow, cap rate, cash-on-cash return, DSCR, IRR and a full multi-year projection. No signup.">
+<link rel="canonical" href="https://lowlune.github.io/rentscope/">
+<meta property="og:title" content="Rental Property Calculator — RentScope">
+<meta property="og:description" content="Free, fast, accurate rental property analysis: cash flow, cap rate, DSCR, IRR.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lowlune.github.io/rentscope/">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"RentScope Rental Property Calculator",
+"applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is a good cap rate for a rental property?","acceptedAnswer":{"@type":"Answer","text":"Cap rate varies by market and risk. Single-family rentals often trade around 4–8%, while higher-risk or lower-appreciation markets may reach 8–12%. Compare against similar local deals rather than a single national number."}},
+{"@type":"Question","name":"What DSCR do lenders require?","acceptedAnswer":{"@type":"Answer","text":"Many lenders look for a debt service coverage ratio (DSCR) of 1.20–1.25 or higher. Below 1.0 the property's net operating income does not cover its mortgage."}},
+{"@type":"Question","name":"What is a good cash-on-cash return?","acceptedAnswer":{"@type":"Answer","text":"A common target is 8% or more, though this depends on leverage, market and strategy. Highly leveraged deals can show high cash-on-cash returns with correspondingly higher risk."}}]}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="brand">Rent<b>Scope</b></div>
+    <nav>
+      <a href="#calculator">Calculator</a>
+      <a href="#metrics">Metrics</a>
+      <a href="#faq">FAQ</a>
+      <a href="#pro" data-gumroad>Pro model</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <span class="badge">100% free · no signup · runs in your browser</span>
+    <h1>Rental Property Calculator</h1>
+    <p>Model any rental deal in seconds: monthly cash flow, cap rate, cash-on-cash return, DSCR and levered IRR, plus a full multi-year projection and exit analysis.</p>
+  </section>
+
+  <div class="app" id="calculator">
+    <form class="panel" onsubmit="return false" autocomplete="off">
+      <h2>Deal inputs</h2>
+      <fieldset>
+        <legend>Purchase</legend>
+        <div class="field"><label for="purchasePrice">Purchase price</label><div class="in">$<input id="purchasePrice" type="number" value="300000" step="1000" min="0"></div></div>
+        <div class="field"><label for="closingCostsPct">Closing costs</label><div class="in"><input id="closingCostsPct" type="number" value="2" step="0.25" min="0"><span class="unit">%</span></div></div>
+        <div class="field"><label for="rehabCost">Rehab / upfront</label><div class="in">$<input id="rehabCost" type="number" value="10000" step="500" min="0"></div></div>
+        <div class="field"><label for="downPaymentPct">Down payment</label><div class="in"><input id="downPaymentPct" type="number" value="20" step="1" min="0" max="100"><span class="unit">%</span></div></div>
+        <div class="field"><label for="interestRate">Interest rate</label><div class="in"><input id="interestRate" type="number" value="6.5" step="0.125" min="0"><span class="unit">%</span></div></div>
+        <div class="field"><label for="loanTermYears">Loan term</label><div class="in"><input id="loanTermYears" type="number" value="30" step="1" min="1" max="40"><span class="unit">yr</span></div></div>
+      </fieldset>
+      <fieldset>
+        <legend>Income</legend>
+        <div class="field"><label for="rentMonthly">Monthly rent</label><div class="in">$<input id="rentMonthly" type="number" value="2400" step="50" min="0"></div></div>
+        <div class="field"><label for="otherIncomeMonthly">Other income / mo</label><div class="in">$<input id="otherIncomeMonthly" type="number" value="0" step="25" min="0"></div></div>
+        <div class="field"><label for="vacancyPct">Vacancy & credit loss</label><div class="in"><input id="vacancyPct" type="number" value="5" step="0.5" min="0" max="100"><span class="unit">%</span></div></div>
+      </fieldset>
+      <fieldset>
+        <legend>Operating expenses</legend>
+        <div class="field"><label for="mgmtPct">Property management</label><div class="in"><input id="mgmtPct" type="number" value="8" step="0.5" min="0"><span class="unit">%</span></div></div>
+        <div class="field"><label for="maintenancePct">Maintenance & repairs</label><div class="in"><input id="maintenancePct" type="number" value="5" step="0.5" min="0"><span class="unit">%</span></div></div>
+        <div class="field"><label for="propertyTaxAnnual">Property tax / yr</label><div class="in">$<input id="propertyTaxAnnual" type="number" value="3600" step="100" min="0"></div></div>
+        <div class="field"><label for="insuranceAnnual">Insurance / yr</label><div class="in">$<input id="insuranceAnnual" type="number" value="1500" step="100" min="0"></div></div>
+        <div class="field"><label for="hoaMonthly">HOA / mo</label><div class="in">$<input id="hoaMonthly" type="number" value="0" step="10" min="0"></div></div>
+        <div class="field"><label for="utilitiesMonthly">Owner utilities / mo</label><div class="in">$<input id="utilitiesMonthly" type="number" value="0" step="10" min="0"></div></div>
+      </fieldset>
+      <fieldset>
+        <legend>Growth & exit</legend>
+        <div class="field"><label for="rentGrowthPct">Rent growth</label><div class="in"><input id="rentGrowthPct" type="number" value="3" step="0.25" min="0"><span class="unit">%</span></div></div>
+        <div class="field"><label for="expenseGrowthPct">Expense growth</label><div class="in"><input id="expenseGrowthPct" type="number" value="2.5" step="0.25" min="0"><span class="unit">%</span></div></div>
+        <div class="field"><label for="appreciationPct">Appreciation</label><div class="in"><input id="appreciationPct" type="number" value="3" step="0.25" min="0"><span class="unit">%</span></div></div>
+        <div class="field"><label for="holdYears">Hold period</label><div class="in"><input id="holdYears" type="number" value="10" step="1" min="1" max="30"><span class="unit">yr</span></div></div>
+        <div class="field"><label for="sellingCostPct">Selling costs</label><div class="in"><input id="sellingCostPct" type="number" value="6" step="0.5" min="0"><span class="unit">%</span></div></div>
+      </fieldset>
+      <div class="share-row">
+        <button class="btn ghost" type="button" id="reset">Reset</button>
+        <button class="btn ghost" type="button" id="csv">Download CSV</button>
+      </div>
+    </form>
+
+    <div class="panel">
+      <h2>Results</h2>
+      <div class="metrics" id="metrics"></div>
+      <canvas id="chart" aria-label="Cash flow and equity chart"></canvas>
+      <div id="projection"></div>
+    </div>
+  </div>
+
+  <section class="cta" id="pro">
+    <div>
+      <h3>Want the full professional model?</h3>
+      <p>RentScope Pro is a spreadsheet model with 30-year projections, loan amortization, tax & depreciation, sensitivity tables, and multi-deal comparison — so you can underwrite deals like an analyst.</p>
+    </div>
+    <a class="btn" href="#pro" data-gumroad>Get RentScope Pro →</a>
+  </section>
+
+  <section class="content">
+    <h2 id="metrics">How the numbers are calculated</h2>
+    <div class="grid2">
+      <div>
+        <h3>Net operating income (NOI)</h3>
+        <p>Effective gross income (rent + other income, less vacancy) minus operating expenses (management, maintenance, taxes, insurance, HOA, utilities). NOI excludes the mortgage.</p>
+        <h3>Cap rate</h3>
+        <p>NOI ÷ purchase price. It measures unlevered yield — how much the property earns independent of financing.</p>
+        <h3>Cash-on-cash return</h3>
+        <p>Annual pre-tax cash flow ÷ total cash invested (down payment + closing costs + rehab). It measures the return on the money you actually put in.</p>
+      </div>
+      <div>
+        <h3>DSCR</h3>
+        <p>NOI ÷ annual debt service. Lenders typically want 1.20–1.25×. Below 1.0, the property doesn't cover its mortgage from operations.</p>
+        <h3>Levered IRR</h3>
+        <p>The annualized return on your cash flows plus net sale proceeds, accounting for the holding period. This is the single best summary of a leveraged deal.</p>
+        <h3>1% rule &amp; GRM</h3>
+        <p>The 1% rule compares monthly rent to purchase price; gross rent multiplier = price ÷ annual gross rent. Both are quick heuristics, not full analyses.</p>
+      </div>
+    </div>
+
+    <h2>How to analyze a rental property in 5 steps</h2>
+    <ol>
+      <li><strong>Estimate income.</strong> Use realistic market rent and subtract a vacancy allowance (5–10% is common).</li>
+      <li><strong>Add up operating expenses.</strong> Management (8–10% of collected rent), maintenance (5–10%), taxes, insurance, HOA and any owner-paid utilities.</li>
+      <li><strong>Compute NOI and the cap rate.</strong> This tells you whether the property is priced sensibly versus comparable deals.</li>
+      <li><strong>Lay on the mortgage.</strong> Your monthly cash flow is NOI minus principal &amp; interest. Check DSCR before assuming a lender will approve.</li>
+      <li><strong>Project the exit.</strong> Appreciation, loan paydown and cash flow combine into total profit and IRR over your hold period.</li>
+    </ol>
+
+    <h2 id="faq">Frequently asked questions</h2>
+    <details><summary>What is a good cap rate for a rental property?</summary><p>Cap rate varies by market and risk. Single-family rentals often trade around 4–8%, while higher-risk or lower-appreciation markets may reach 8–12%. Compare against similar local deals rather than a single national number.</p></details>
+    <details><summary>What DSCR do lenders require?</summary><p>Many lenders look for a debt service coverage ratio of 1.20–1.25 or higher. Below 1.0 the property's net operating income does not cover its mortgage.</p></details>
+    <details><summary>What is a good cash-on-cash return?</summary><p>A common target is 8% or more, though this depends on leverage, market and strategy. Highly leveraged deals can show high cash-on-cash returns with correspondingly higher risk.</p></details>
+    <details><summary>Does this calculator include taxes and depreciation?</summary><p>The free calculator shows pre-tax cash flow and returns. The full RentScope Pro model adds income tax, depreciation and after-tax returns.</p></details>
+    <details><summary>Is my data stored anywhere?</summary><p>No. Everything runs in your browser. Nothing is uploaded.</p></details>
+
+    <div class="disclaimer"><strong>Disclaimer:</strong> RentScope is an educational estimation tool, not financial, tax or investment advice. Projections rely on assumptions you enter and will differ from actual results. Verify figures with a qualified professional before investing.</div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>© <span id="yr"></span> RentScope · <a href="#calculator">Free rental property calculator</a> · <a href="#pro" data-gumroad>Pro model</a></p>
+  </div>
+</footer>
+<script type="module" src="app.js"></script>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
