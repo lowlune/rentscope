@@ -26,6 +26,7 @@ levered IRR, and a multi-year projection with exit analysis.
 - [1031 exchange calculator](https://lowlune.github.io/rentscope/1031-exchange-calculator.html)
 - [Rental property depreciation calculator](https://lowlune.github.io/rentscope/rental-property-depreciation-calculator.html)
 - [Seller financing calculator](https://lowlune.github.io/rentscope/seller-financing-calculator.html)
+- [Hard money loan calculator](https://lowlune.github.io/rentscope/hard-money-loan-calculator.html)
 
 Each landing page's worked example is computed at build time by the same tested engine — the
 numbers on the page come from the code, not from a spreadsheet.
@@ -39,6 +40,7 @@ node test-calc.mjs              # 24 assertions  — core underwriting engine
 node test-1031.mjs              # 29 assertions  — 1031 exchange (boot, deferred gain)
 node test-depreciation.mjs      # 47 assertions  — 27.5/39-yr MACRS, mid-month, recapture
 node test-sellerfinancing.mjs   # 1,070 assertions — owner-carried notes + balloons
+node test-hardmoney.mjs         # 2,201 assertions — hard-money / bridge loans (points, interest-only)
 ```
 
 ## Develop
@@ -50,7 +52,7 @@ python3 -m http.server 8000   # then open http://localhost:8000
 ## Files
 
 - `index.html` — the free calculator app
-- `calc.js`, `exchange1031.js`, `depreciation.js`, `sellerfinancing.js` — pure, tested engines
+- `calc.js`, `exchange1031.js`, `depreciation.js`, `sellerfinancing.js`, `hardmoney.js` — pure, tested engines
 - `app.js` — UI wiring, chart, CSV export
 - `*-calculator.html` — SEO landing pages with build-time worked examples
 - `styles.css`
