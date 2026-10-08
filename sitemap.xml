@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://lowlune.github.io/rentscope/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://lowlune.github.io/rentscope/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://lowlune.github.io/rentscope/cap-rate-calculator.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lowlune.github.io/rentscope/dscr-calculator.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lowlune.github.io/rentscope/cash-on-cash-return-calculator.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lowlune.github.io/rentscope/one-percent-rule-calculator.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lowlune.github.io/rentscope/brrrr-calculator.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

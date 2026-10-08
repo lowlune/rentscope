@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BRRRR Calculator — Refinance and Cash-Left-In Analysis | RentScope</title>
+<meta name="description" content="Model a BRRRR deal: buy, rehab, rent, refinance, repeat. See cash left in the deal and cash-on-cash after refinancing.">
+<link rel="canonical" href="https://lowlune.github.io/rentscope/brrrr-calculator.html">
+<meta property="og:title" content="BRRRR Method Calculator | RentScope">
+<meta property="og:description" content="Model a BRRRR deal: buy, rehab, rent, refinance, repeat. See cash left in the deal and cash-on-cash after refinancing.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What LTV do BRRRR lenders use?","acceptedAnswer":{"@type":"Answer","text":"Many use 70–75% of the appraised after-repair value, though some go to 75–80% for strong borrowers."}},{"@type":"Question","name":"What if the refinance does not return all my cash?","acceptedAnswer":{"@type":"Answer","text":"Then you have cash left in the deal. That is not necessarily bad if the cash-on-cash return on the remaining capital is strong."}},{"@type":"Question","name":"How long does a BRRRR take?","acceptedAnswer":{"@type":"Answer","text":"Typically 3–9 months including rehab and the seasoning period some lenders require before refinancing."}}]}</script>
+</head>
+<body>
+<header><div class="wrap nav"><a class="brand" href="index.html" style="text-decoration:none">Rent<b>Scope</b></a>
+<nav><a href="index.html">Free calculator</a><a href="cap-rate-calculator.html">Cap rate</a><a href="dscr-calculator.html">DSCR</a><a href="cash-on-cash-return-calculator.html">Cash-on-cash</a></nav></div></header>
+<div class="wrap">
+  <section class="hero">
+    <p style="font-size:13px;color:var(--muted);margin:0 0 8px"><a href="index.html">RentScope</a> › BRRRR Method Calculator</p>
+    <h1>BRRRR Method Calculator</h1>
+    <p>How much cash is left in the deal after you refinance?</p>
+  </section>
+
+  <section class="content">
+    <p>BRRRR stands for Buy, Rehab, Rent, Refinance, Repeat. The goal is to recover your capital at the refinance so you can recycle it into the next property while keeping the asset.</p><p>The key output is “cash left in the deal” — the difference between your all-in cost and the cash you pull out at the refinance.</p>
+    <h2>Formula</h2>
+    <p><code>Cash left in deal = All-in cost − Refinance loan proceeds</code></p>
+    <p>All-in cost is purchase price plus closing costs plus rehab (minus any holding income). Refinance proceeds depend on the after-repair value (ARV) and the lender’s loan-to-value limit.</p>
+    <h2>How to calculate it</h2>
+    <ol><li>Total your purchase, closing and rehab costs.</li><li>Estimate the after-repair value (ARV) and the refinance LTV (often 75%).</li><li>Subtract the new loan amount and any costs from your all-in cost to get cash left in.</li></ol>
+
+    <h2>Worked example</h2>
+    <p>Assume a $180,000 property renting for $2,200/month with typical expenses and a 7.00% loan. Running those numbers through the RentScope engine gives:</p>
+    <div class="metrics"><div class="metric"><div class="k">Monthly cash flow</div><div class="v">$506</div></div><div class="metric"><div class="k">Cap rate</div><div class="v">9.36%</div></div><div class="metric"><div class="k">Cash-on-cash</div><div class="v">6.71%</div></div><div class="metric"><div class="k">DSCR</div><div class="v">1.56</div></div><div class="metric"><div class="k">IRR (levered)</div><div class="v">10.55%</div></div><div class="metric"><div class="k">10-yr total profit</div><div class="v">$108,570</div></div></div>
+    <p><a class="btn" href="index.html">Open the free calculator with your own numbers →</a></p>
+
+    <h2>FAQ</h2>
+    <details><summary>What LTV do BRRRR lenders use?</summary><p>Many use 70–75% of the appraised after-repair value, though some go to 75–80% for strong borrowers.</p></details><details><summary>What if the refinance does not return all my cash?</summary><p>Then you have cash left in the deal. That is not necessarily bad if the cash-on-cash return on the remaining capital is strong.</p></details><details><summary>How long does a BRRRR take?</summary><p>Typically 3–9 months including rehab and the seasoning period some lenders require before refinancing.</p></details>
+    <div class="disclaimer"><strong>Disclaimer:</strong> Educational estimate only, not financial, tax or investment advice. Assumptions are illustrative.</div>
+  </section>
+
+  <section class="cta">
+    <div><h3>Go beyond a single metric</h3><p>The free RentScope calculator models cash flow, cap rate, DSCR, IRR and a full multi-year projection. RentScope Pro adds after-tax analysis and sensitivity tables.</p></div>
+    <a class="btn" href="index.html">Use the calculator →</a>
+  </section>
+</div>
+<footer><div class="wrap"><p>© <span class="yr"></span> RentScope · <a href="index.html">Rental property calculator</a></p></div></footer>
+<script>document.querySelectorAll('.yr').forEach(e=>e.textContent=new Date().getFullYear());</script>
+</body></html>
