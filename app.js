@@ -1,7 +1,9 @@
 import { analyze } from './calc.js';
+import { PRO_URL } from './store.js';
 
-// ── Replace with the real Gumroad product URL once the listing exists. ──
-export const GUMROAD_URL = '#pro'; // TODO(listing): set to https://<store>.gumroad.com/l/rentscope-pro
+// Store link comes from ./store.js (single source of truth). '#pro' means "not on
+// sale yet" — the anchors then scroll to the on-page Pro section.
+const GUMROAD_URL = PRO_URL || '#pro';
 
 const $ = (id) => document.getElementById(id);
 const FIELDS = [
